@@ -15,9 +15,11 @@ class Transaction < ActiveRecord::Base
   end
 
   def balance_check
-    sending_user = User.find_by_id(self.from_user_id)
-     if sending_user.balance < self.num_credits
-       raise ActiveRecord::Rollback, "Insufficient Funds"
+    if self.from_user_id
+      sending_user = User.find_by_id(self.from_user_id)
+       if sending_user.balance < self.num_credits
+         raise ActiveRecord::Rollback, "Insufficient Funds"
+       end
      end
   end
 end

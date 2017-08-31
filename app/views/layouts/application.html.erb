@@ -6,9 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+  <% if current_user %>
+    <%= link_to "Logout", destroy_user_session_path %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+</header>
 <body>
 
 <%= yield %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 </body>
 </html>

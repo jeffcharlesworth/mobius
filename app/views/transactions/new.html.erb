@@ -1,0 +1,18 @@
+
+<%= current_user.balance %>
+<% @users.each do |user| %>
+  <% if user.email != current_user.email %>
+    <div>
+      <div class="useremail">
+        <%= user.email %>
+      </div>
+      <div>
+        <%= form_for @transaction, url: {action: 'create'} do |f| %>
+          <%= f.text_field :num_credits, placeholder: "Credits" %>
+          <%= hidden_field_tag(:to_user_id, user.id) %>
+          <%= f.submit "Send Credits" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
