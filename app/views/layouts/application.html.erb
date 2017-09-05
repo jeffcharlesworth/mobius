@@ -6,9 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
+<header class="header">
   <% if current_user %>
-    <%= link_to "Logout", destroy_user_session_path %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "Login", new_user_session_path %>
   <% end %>

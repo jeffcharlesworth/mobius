@@ -63,6 +63,7 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    hashie (3.5.6)
     hirb (0.7.3)
     i18n (0.8.6)
     jbuilder (2.7.0)
@@ -85,6 +86,9 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    omniauth (1.6.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     rack (1.6.8)
     rack-test (0.6.3)
@@ -191,6 +195,7 @@ DEPENDENCIES
   hirb
   jbuilder (~> 2.0)
   jquery-rails
+  omniauth
   rails (= 4.2.5)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)

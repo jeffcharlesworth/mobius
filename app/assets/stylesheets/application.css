@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.header {
+  text-align: right;
+  height: 3rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+body {
+  padding: 1rem 2rem 1rem 2rem;
+}
